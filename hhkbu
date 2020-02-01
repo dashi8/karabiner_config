@@ -1,0 +1,9 @@
+#!/bin/sh
+osascript -e 'quit app "Karabiner-Elements"'
+(
+    cd ~/.config/karabiner
+    rm karabiner.json
+    ln -s karabiner_hhkbu.json karabiner.json
+)
+open /Applications/Karabiner-Elements.app
+osascript -e 'quit app "Karabiner-Elements"'
