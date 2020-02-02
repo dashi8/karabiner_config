@@ -16,6 +16,33 @@
                 },
                 "rules": [
                     {
+                        "description": "controlを単体で押したときに、escキーを送信する。 他のキーと押したときはcontrolにする。",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_control",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "escape"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Exchange underscore to backslash",
                         "manipulators": [
                             {
